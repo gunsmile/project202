@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <a class="btn btn-info" href="{% url 'home' %}"> home</a>
+    <a class="btn btn-warning" href="{% url 'profile' %}"> profile</a>
+    <a class="btn btn-info" href="{% url 'logout' %}">logout</a>
+    <p>---header---<p>
+    {% block content %}
+    {% endblock %}
+    <p>---footer---<p></p>
+</body>
+</html>
