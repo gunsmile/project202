@@ -8,7 +8,7 @@ class ProfileAdmin(admin.ModelAdmin):
 admin.site.register(Profile, ProfileAdmin)
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display=['title','unit','unit_price','description']
+    list_display=['title','unit_price','description']
     pass
 admin.site.register(Item, ItemAdmin)
 
@@ -18,6 +18,6 @@ class OrderItemAdmin(admin.ModelAdmin):
     list_editable = ('item','quantity')
 admin.site.register(OrderItem, OrderItemAdmin)
 
-# class InvoiceAdmin(admin.ModelAdmin):
+# class SaleOrderAdmin(admin.ModelAdmin):
 #     pass
-# admin.site.register(Invoice, InvoiceAdmin)
+# admin.site.register(SaleOrder, SaleOrderAdmin)

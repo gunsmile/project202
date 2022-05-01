@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>hello {{user}}</h1>
+
+    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+        {% for i in object_list %}
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-card-hover uk-card-body">
+                <h3 class="uk-card-title">{{i.title}}</h3>
+                <p>{{i.description}}</p>
+                <p>{{i.unit_price}}บาท</p>
+                <form action="{% url 'add' %}" method="post">
+                    {% csrf_token %} 
+                    <input type="hidden" name="pk" value="{{i.pk}}">
+                    <input type="hidden" name="title" value="{{i.title}}">
+                    <input type="submit" value="add" class="uk-button uk-button-default">
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
