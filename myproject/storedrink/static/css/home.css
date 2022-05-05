@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500;600&family=Montserrat:wght@400;500;600&family=Orelega+One&family=Poppins:wght@400;500;600&display=swap');
+
+
+:root{
+    --main-font:'Poppins', sans-serif;
+    --secondary-font: 'Orelega One', cursive;
+    --body-font:'Montserrat', sans-serif;
+    --thai-font: 'Kanit', sans-serif;
+}
+html,body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+html{
+    font-family: var(--main-font);
+    font-size: 18px;
+    color: #201917;
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+section{
+    padding: 3.9rem 0;
+    overflow: hidden;
+}
+img{
+    width: 100%;
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+}
+p{
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+/* navbr */
+.content-navbar{
+    width: 100%;
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+    /* background-color: salmon; */
+    z-index: 5;
+    width: 100%;
+    padding: 25px 0;
+    position: fixed;
+    transition: all 0.3s ease;
+    transition: .5s;
+}
+.navbar.sticky{
+    padding: 10px 0;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+    
+}
+.navbar .logo a img{
+    width: 4rem;
+    
+}
+.navbar .menu-list{
+    display: inline-flex;
+}
+.menu-list li{
+    list-style: none;
+}
+.menu-list li a{
+    color: #201917;
+    font-weight: 500;
+    font-family: var(--main-font);
+    margin-left: 25px;
+    transition: all .3s ease;
+}
+.menu-list li a:hover{
+    color: #FFE4B5;
+}
+.icon{
+    color: #201917;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+.icon.cancel-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+@media (max-width:868px){
+    .icon{
+        display: block;
+    }
+    .icon.hide{
+        display: none;
+    }
+    .navbar .menu-list{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        background-color:   #E9967A;
+        display: block;
+        padding: 6rem 0;
+        text-align: center;
+        transition: all 0.3 ease;
+        
+    }
+   
+    .navbar .menu-list.active{
+        left: 0%;
+    }
+    .navbar .menu-list li{
+        margin-top: 25px;
+    }
+    .navbar .menu-list li a{
+        font-size: 23px;
+        font-weight: 600;
+        font-family: var(--main-font);
+    }
+}
+
+/* hero */
+.hero{
+    background: url('../images/พื้นหลัง.jpg') left;
+    background-size: cover;
+    -webkit-background-size : cover;
+    background-size : cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.sub-headline{
+    font-family: var(--secondary-font);
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+    line-height: .4;
+    opacity: 0;
+    animation: fadeUp .5s forwards;
+    animation-delay: .5s;
+}
+.headline{
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 8px;
+    margin-right: -.5rem;
+    animation: scale .5s forwards;
+    
+}
+
+.single-animation h5{
+    font-family: var(--body-font);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: fadeDown .5s forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+.separator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.line{
+    width: 100%;
+    max-width: 7rem;
+    height: .25rem;
+    border-radius: 3px;
+    background-color: #201917;
+    position: relative;
+    opacity: 0;
+    animation: grow .5s forwards;
+    animation-delay: 1.2s;
+}
+
+.bottle{
+    font-size: 2rem;
+    margin: .3rem 5px;
+    animation: spin .5s forwards;
+    animation-delay: .7s;
+    opacity: 0;
+}
+
+.btn{
+    margin-top: .6rem;
+    background:  linear-gradient(to right, #fbd786, #f7797d); 
+    box-shadow: #201917 3px 3px ;
+    margin-right: 20px;
+    padding: 5px 30px;
+    text-align: center;
+    animation: fadeDown .5s forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+.btn:hover{
+    background: #201917;  /* fallback for old browsers */
+    color: #fff;
+}
+
+/* about */
+.about-thaizaa{
+    background: url('../images/bg_about.png');
+    background-size: cover;
+    -webkit-background-size : cover;
+    background-size : cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.about-thaizaa p{
+    font-family: var(--body-font);
+    font-weight: 500;
+}
+
+/* product */
+.presentation-product{
+    background: url('../images/bg_presentation-product.jpg') no-repeat;
+    background-size: cover;
+    -webkit-background-size : cover;
+    background-size : cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.presentation-product .sub-headline{
+    margin-top: 3rem;
+}
+.site-slider-two {
+    margin-top: 2rem;
+}
+
+/* contact */
+.global-headline{
+    margin-top: 3rem;
+}
+.contact{
+    background: linear-gradient(89.85deg, #ECC2B6 7.73%, #FFE0C0 79.35%), #FFFFFF;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: var(--thai-font);
+    font-weight: 500;
+}
+.content-logo{
+    width: 10rem;
+}
+.content-main-info{
+    background: linear-gradient(129.14deg, rgba(255, 255, 255, 0.72) 10.31%, rgba(251, 250, 248, 0.456) 82.24%);
+    box-shadow: 4px 4px 50px rgba(172, 172, 172, 0.25);
+    backdrop-filter: blur(60px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 35px;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+.line-contact{
+    
+    margin-bottom: 20px 0;
+    opacity: 0;
+    max-width: 17rem;
+    height: .2rem;
+    border-radius: 3px;
+    background-color: #201917;
+    text-align: center;
+    display: inline-block;
+    animation: grow .5s forwards;
+    animation-delay: 1.7s;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    0%{
+        transform: translateY(4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes scale {
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes grow {
+    0%{
+        width: 0;
+    }
+    100%{
+        opacity: 1;
+        width: 100%;
+    }
+}
+@keyframes fadeDown {
+    0%{
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(-360deg);
+    }
+}
+
+/* bubbles */
+.bubbles img{
+    width: 50px;
+    animation: bubble 7s linear infinite;
+}
+.bubbles{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -70px;
+}
+@keyframes bubble{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50%{
+        
+        opacity: 1;
+    }
+    75%{
+        
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+}
+.bubbles img:nth-child(1){
+    animation-delay: 2s;
+    width: 30px;
+}
+.bubbles img:nth-child(2){
+    animation-delay: 1s;
+}
+.bubbles img:nth-child(3){
+    animation-delay: 4s;
+}
+.bubbles img:nth-child(4){
+    animation-delay: .5s;
+    width: 20px;
+}
+.bubbles img:nth-child(5){
+    animation-delay: 4s;
+}
+.bubbles img:nth-child(6){
+    animation-delay: 2.5s;
+    width: 20px;
+}
+.bubbles img:nth-child(7){
+    animation-delay: 3s;
+    width: 30px;
+}
+.bubbles img:nth-child(8){
+    animation-delay: 1s;
+}
+.bubbles img:nth-child(9){
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(10){
+    animation-delay: .5s;
+    width: 30px;
+}

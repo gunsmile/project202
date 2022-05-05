@@ -1,7 +1,7 @@
-"""myproject URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,21 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from myapp import views
-from myapp.views import ItemListView
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('',views.home, name='home'),
-    path('profile/',views.profile, name='profile'),
-    path("register/", views.register_request, name="register"),
-    # path("login/", views.login_request, name="login"),
-    path('accounts/',include('allauth.urls')),
-    # path("logout/", views.logout_request, name= "logout"),
-    path('add/', views.add_to_cart, name='add'),
-    path('', ItemListView.as_view(), name='home'),
-    path('qr_mobile/<mobile>/<amount>/qr.png', views.get_qr, name='qr'),
-    path('qr_nid/<nid>/<amount>/', views.get_qr, name='qr'),
-    path('checkout/',views.checkout, name='checkout'),
-] 
+    path('', include('storedrink.urls')),
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
